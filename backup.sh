@@ -22,8 +22,8 @@ sudo tar zcvfp backup_tmp.tgz                               \
     --exclude=/home/chengyi/.wiznote                        \
     --exclude=/home/chengyi/.thunderbird                    \
     --exclude=/home/chengyi/.local/share/Trash/files        \
-    #--exclude=/boot                                         \
-    #--exclude=/initrd.img                                   \
-    #--exclude=/vmlinuz                                      \
+    --exclude=/boot                                         \
+    --exclude=/initrd.img                                   \
+    --exclude=/vmlinuz                                      \
     /
 mv backup_tmp.tgz backup.tgz
