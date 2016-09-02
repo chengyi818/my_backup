@@ -4,7 +4,7 @@
 delete_dup() {
     num=`find . -name "*.tgz" | wc -l`
     echo "backup file num:$num"
-    if [ $num -gt 3 ]; then
+    if [ $num -gt 2 ]; then
         filename=`find . -name "*.tgz" | sort | awk -F: 'NR==1 {print}'`
         rm $filename
         echo "remove $filename"
