@@ -1,3 +1,8 @@
 #!/bin/sh
-# sudo rsync -avz --process /home/chengyi/backup/backup_20151219/ /
-tar zxvfp ./backup.tgz -C /
+if [ ! -n "$1" ] ; then
+        filename=`find . -name "*.tgz" | sort -r| awk -F: 'NR==1 {print}'`
+        echo "filename"
+        sudo tar zxvfp $filename -C /
+else
+	sudo tar zxvfp $1 -C /
+fi
